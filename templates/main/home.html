@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block body_block %}    
+    {% if submitted %}
+        <style>
+            .gifground {
+                background: url('{{ url }}');
+                background-size: cover;
+            }
+        </style>
+        <script>
+            $('body').attr('class', 'gifground')
+        </script> 
+    {% else %}
+        <div class="row center">
+            <form method="POST" class="mx-auto">
+                <div class="form-group">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" value="Submit" class="custom-button">
+                </div>
+            </form>
+        </div>
+    {% endif %}
+{% endblock body_block %}
+    

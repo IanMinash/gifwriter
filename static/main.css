@@ -1,0 +1,38 @@
+@font-face{
+    font-family: 'Uni Sans CAPS Heavy Italic';
+    src: url("Uni Sans Heavy Italic.otf");
+  }
+
+.gradient{
+    background: linear-gradient(to right,#40E0D0, #FF8C00, #FF0080);
+}
+
+body{
+    height:100vh;
+    margin:0;
+    font-family: 'Uni Sans CAPS Heavy Italic', sans-serif !important;
+    line-height:1.8em;
+    color:#f4f4f4 !important;
+  }
+
+.center {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    position: relative;
+    font-size: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .userinput{
+     background-color: rgba(0,0,0,0);
+     border: 0;
+     color:#f4f4f4 !important;
+  }
+
+  .custom-button{
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
