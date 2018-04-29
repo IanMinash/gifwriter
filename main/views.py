@@ -4,6 +4,8 @@ from paralleldots import set_api_key, emotion
 import giphy_client
 from giphy_client.rest import ApiException
 from django.conf import settings
+from random import randint
+
 # Create your views here.
 set_api_key(settings.PARALLEL_API)
 giphy_api_key = settings.GIPHY_API  # str | Giphy API Key.
@@ -25,7 +27,7 @@ def home(request):
                 # Search Endpoint
             api_response = giphy.gifs_search_get(
                 giphy_api_key, query, lang=lang)
-            gifurl = api_response.data[randint(0, limit)].images.downsized_large.url)
+            gifurl = api_response.data[randint(0, 25)].images.downsized_large.url)
             clean['gif'] = gifurl
             except ApiException as e:
                 print("Exception when calling DefaultApi->gifs_search_get: %s\n" % e)
