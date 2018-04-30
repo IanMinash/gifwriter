@@ -2,6 +2,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block title_block %}
+    Gifemo
+{% endblock title_block %}
+    
 
 {% block body_block %}    
     {% if submitted %}
@@ -14,13 +18,18 @@
         <script>
             $('body').attr('class', 'gifground')
         </script> 
+        <div class="row center">
+            <p class="mx-auto">
+                {{ text }}
+            </p>
+        </div>
     {% else %}
         <div class="row center">
-            <form method="POST" class="mx-auto">
+            <form method="POST" class="mx-auto text-center">
                 <div class="form-group">
                     {{ form.as_p }}
                     {% csrf_token %}
-                    <input type="submit" value="Submit" class="custom-button">
+                    <input type="submit" value="Submit" class="custom-button" hidden>
                 </div>
             </form>
         </div>

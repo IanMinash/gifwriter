@@ -4,7 +4,7 @@
   }
 
 .gradient{
-    background: linear-gradient(to right,#40E0D0, #FF8C00, #FF0080);
+    background: linear-gradient(to right,#00b09b, #96c93d) no-repeat;
 }
 
 body{
@@ -13,7 +13,12 @@ body{
     font-family: 'Uni Sans CAPS Heavy Italic', sans-serif !important;
     line-height:1.8em;
     color:#f4f4f4 !important;
+
   }
+
+.row{
+  margin: 0 !important;
+}
 
 .center {
     display: inline-block;
@@ -29,10 +34,14 @@ body{
      background-color: rgba(0,0,0,0);
      border: 0;
      color:#f4f4f4 !important;
+     width: 80%;
+     min-height: 20vh;
+     max-height: 60vh;
   }
 
   .custom-button{
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    background-color: rgba(0,0,0,0);
+    border: 3px, solid, #f4f4f4 !important;
+    color:#f4f4f4 !important;
+    width: 80%;
   }

@@ -28,13 +28,14 @@ def home(request):
                 api_response = giphy.gifs_search_get(
                     giphy_api_key, query, lang=lang)
                 gifurl = api_response.data[randint(0, 25)].images.downsized_large.url
-                clean['gif']=gifurl
+                text = clean['text']
             except ApiException as e:
                 print("Exception when calling DefaultApi->gifs_search_get: %s\n" % e)
+        
         form.gif=gifurl
         form.save()
         submit=True
-        return render(request, "main/home.html", {'form': form, 'url': gifurl, 'submitted': submit})
+        return render(request, "main/home.html", {'form': form, 'url': gifurl, 'submitted': submit, 'text':text})
     else:
         form=User_textForm()
         return render(request, "main/home.html", {'form': form, 'submitted': submit})
