@@ -1,0 +1,1 @@
+web: gunicorn processcomm.wsgi --log-file -
