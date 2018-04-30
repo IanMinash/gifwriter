@@ -11,8 +11,8 @@ class User_textForm(forms.ModelForm):
         model = User_text
         fields = ('text', 'gif')
         widgets = {
-            'text': forms.TextInput(attrs={'placeholder': 'Type Here...',
-                                           'class': 'userinput',}),
+            'text': forms.TextInput(attrs={'placeholder': 'Share something...',
+                                           'class': 'userinput text-center',}),
             'gif': forms.URLInput(attrs={'style': 'display:none;'}),
         }
         labels = {
