@@ -20,9 +20,9 @@ def home(request):
         form = User_textForm(request.POST)
         if form.is_valid():
             clean = form.cleaned_data
-            feeling = emotion(clean['text'])
+            feeling = emotion(clean['text']) #Rather disappointing for short texts
             # str | Search query term or prhase.
-            query = feeling['emotion']['emotion']
+            query = clean['text']
             try:
                 # Search Endpoint
                 api_response = giphy.gifs_search_get(

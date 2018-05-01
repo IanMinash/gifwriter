@@ -32,7 +32,10 @@ body{
 
   .userinput{
      background-color: rgba(0,0,0,0);
-     border: 0;
+     border-bottom: 2px solid #f4f4f4;
+     border-left: 0;
+     border-right: 0;
+     border-top:0; 
      color:#f4f4f4 !important;
      width: 80%;
      min-height: 20vh;
@@ -44,4 +47,11 @@ body{
     border: 3px, solid, #f4f4f4 !important;
     color:#f4f4f4 !important;
     width: 80%;
+  }
+
+  @media(max-width:576px){
+    .center{
+      font-size: 50px;
+  
+    }
   }
