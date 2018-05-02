@@ -3,37 +3,21 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Gifemo
+    Gifwriter
 {% endblock title_block %}
     
 
-{% block body_block %}    
-    {% if submitted %}
-        <style>
-            .gifground {
-                background: url('{{ url }}');
-                background-size: cover;
-                background-position: center;
-            }
-        </style>
-        <script>
-            $('body').attr('class', 'gifground')
-        </script> 
-        <div class="row center">
-            <p class="mx-auto text-center">
-                {{ text }}
-            </p>
-        </div>
-    {% else %}
-        <div class="row center">
-            <form method="POST" class="mx-auto text-center">
+{% block body_block %}
+    <div class="row">
+        <img src="{% static 'resources/GIFWriter.svg' %}" class="mx-auto logo" width=350 />
+    </div>    
+    <div class="row center">
+            <form method="GET" action="{% url 'result' %}" class="mx-auto text-center eighty"> 
                 <div class="form-group">
-                    {{ form.as_p }}
-                    {% csrf_token %}
-                    <input type="submit" value="Submit" class="custom-button" hidden>
+                    <input class="form-control custom-input" id="querybox" name="query" type="text" placeholder="Get GIFs">
+                    <input type="submit" value="Submit" class="form-control custom-button">
                 </div>
             </form>
-        </div>
-    {% endif %}
+    </div>
 {% endblock body_block %}
     
