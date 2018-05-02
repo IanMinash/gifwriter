@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+    Results | Gifwriter
+{% endblock title_block %}
+{% block font_block %}
+     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">    
+{% endblock font_block %}
+{% block body_block %}
+    <div class="row">
+        <img src="{% static 'resources/GIFWriter.svg' %}" class="mx-auto logo" width=350 />
+    </div> 
+    <div class="row">
+        <p class="mx-auto header">***Results***</p>
+    </div>
+    <hr class="my-4">
+    <div class="container">
+        <div class="row">
+            {% for gif in gifs %}
+            <div class="col-sm-4">
+                <div class="card mx-auto result" style="background: url('{{ gif.url }}') no-repeat center/cover;">
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+    <form method="GET" action="{% url 'chosen' %}" class="mx-auto text-center"> 
+                <div class="form-group">
+                    <input class="form-control" id="chosengif" name="gif" type="text" hidden>
+                    <input type="submit" value="Submit" class="custom-button" hidden>
+                </div>
+    </form>
+    <script>
+        $('.card').click(function(){
+            $('card').removeClass('selected')
+            $('#chosengif').attr('value', $('.card').index(this))
+            $(this).addClass('selected')
+        });
+    </script>
+    
+        
+{% endblock body_block %}

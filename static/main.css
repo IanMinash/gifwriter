@@ -1,23 +1,33 @@
 @font-face{
     font-family: 'Uni Sans CAPS Heavy Italic';
-    src: url("Uni Sans Heavy Italic.otf");
+    src: url("fonts/Uni Sans Heavy Italic.otf");
   }
 
-.gradient{
-    background: linear-gradient(to right,#00b09b, #96c93d) no-repeat;
-}
 
 body{
     height:100vh;
     margin:0;
     font-family: 'Uni Sans CAPS Heavy Italic', sans-serif !important;
     line-height:1.8em;
-    color:#f4f4f4 !important;
-
+    color:rgb(128, 128, 128) !important;
+    background-color:rgb(51, 51, 51) !important;
+  font-size: 20px;
   }
 
 .row{
   margin: 0 !important;
+}
+
+.selected{
+  border: 4px solid rgb(237, 30, 121) !important;
+}
+
+.result{
+  border-radius: 10px !important;
+  width: 18rem;
+  height: 22rem;
+  margin: 10px;
+  border: 2px solid rgb(128, 128, 128) !important;
 }
 
 .center {
@@ -26,8 +36,8 @@ body{
     line-height: normal;
     position: relative;
     font-size: 70px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 40%;
+    transform: translateY(-40%);
   }
 
   .userinput{
@@ -42,16 +52,54 @@ body{
      max-height: 60vh;
   }
 
-  .custom-button{
-    background-color: rgba(0,0,0,0);
-    border: 3px, solid, #f4f4f4 !important;
-    color:#f4f4f4 !important;
-    width: 80%;
+
+  .eighty{
+    width: 80% !important;
+
   }
+
+  .logo{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .custom-input{
+    background-color: rgb(51, 51, 51) !important;
+    color: rgb(128, 128, 128) !important;
+    border: 2px solid rgb(128, 128, 128) !important;
+    font-size: 20px !important;
+  }
+  .custom-input:focus{
+    border: 2px solid rgb(237, 30, 121) !important;
+
+  }
+
+  .form-control:focus{
+    box-shadow:0 0 0 .2rem rgba(237, 30, 121,.25) !important
+  }
+
+  .custom-button{
+    background-color: rgb(128, 128, 128) !important;
+    color: rgb(51, 51, 51) !important;
+    margin-top: 10px;
+    border: 2px solid rgb(128, 128, 128) !important;
+    font-size: 20px !important;
+  }
+  .custom-button:hover{
+    background-color: rgb(237, 30, 121) !important;
+    border: 2px solid rgb(237, 30, 121) !important;
+
+  }
+
+  .header{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+  }
+
 
   @media(max-width:576px){
     .center{
-      font-size: 50px;
+      font-size: 40px;
   
     }
   }
