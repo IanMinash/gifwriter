@@ -19,24 +19,31 @@
         <div class="row">
             {% for gif in gifs %}
             <div class="col-sm-4">
-                <div class="card mx-auto result" style="background: url('{{ gif.url }}') no-repeat center/cover;">
+                <div class="card mx-auto result" style="background: url('{{ gif }}') no-repeat center/cover;">
+                    <input type="submit" value="Choose" class="sub custom-button" hidden>
                 </div>
             </div>
             
             {% endfor %}
         </div>
     </div>
-    <form method="GET" action="{% url 'chosen' %}" class="mx-auto text-center"> 
+    <form method="GET" action="{% url 'chosen' %}" id="chooseform" class="mx-auto text-center"> 
                 <div class="form-group">
                     <input class="form-control" id="chosengif" name="gif" type="text" hidden>
-                    <input type="submit" value="Submit" class="custom-button" hidden>
                 </div>
     </form>
     <script>
         $('.card').click(function(){
-            $('card').removeClass('selected')
+            $('.card').removeClass('selected')
+            $('.sub').attr('hidden', '')
+            $('.card').addClass('result')
             $('#chosengif').attr('value', $('.card').index(this))
+            $('.sub').eq($('.card').index(this)).removeAttr('hidden')
+            $(this).removeClass('result')
             $(this).addClass('selected')
+        });
+        $('.sub').click(function(){
+            $('#chooseform').trigger('submit')
         });
     </script>
     

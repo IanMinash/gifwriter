@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+    Results | Gifwriter
+{% endblock title_block %}
+{% block font_block %}
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Roboto|Slabo+27px|Titan+One" rel="stylesheet">
+{% endblock font_block %}
+{% block body_block %}
+    <div class="row">
+        <img src="{% static 'resources/GIFWriter.svg' %}" class="mx-auto logo" width=350 />
+    </div> 
+    <div class="row">
+        <p class="mx-auto header">***Customize***</p>
+    </div>
+    <hr class="my-4">
+    <div class="container">
+        <div class="row">
+                <div class="card mx-auto result" style="background: url('{{ gif }}') no-repeat center/cover;">
+                    <p class="center">{{ text }}</p>
+                </div><br>
+                <input type="submit" value="Create" class="sub custom-button" hidden>                
+    </div>
+    <form method="POST" id='chooseform' class="mx-auto text-center"> 
+                <div class="form-group">
+                    <input class="form-control" id="chosengif" name="gif" type="text" hidden>
+                </div>
+    </form>
+    
+        
+{% endblock body_block %}
