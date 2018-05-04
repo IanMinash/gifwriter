@@ -19,7 +19,12 @@ body{
 }
 
 .selected{
+  border-radius: 10px !important;
+  width: 18rem;
+  height: 22rem;
+  margin: 10px;
   border: 4px solid rgb(237, 30, 121) !important;
+  border-bottom: 8px solid rgb(237, 30, 121) !important;
 }
 
 .result{
@@ -29,6 +34,7 @@ body{
   margin: 10px;
   border: 2px solid rgb(128, 128, 128) !important;
 }
+
 
 .center {
     display: inline-block;
@@ -89,6 +95,17 @@ body{
     background-color: rgb(237, 30, 121) !important;
     border: 2px solid rgb(237, 30, 121) !important;
 
+  }
+
+  .sub.custom-button{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    position: relative;
+    top: 97.5%;
+    transform: translateY(-97.5%);
+    background-color: rgb(237, 30, 121) !important;
+    border: 2px solid rgb(237, 30, 121) !important;
   }
 
   .header{
