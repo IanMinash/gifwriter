@@ -4,29 +4,58 @@
 {% block title_block %}
     Results | Gifwriter
 {% endblock title_block %}
-{% block font_block %}
+{% block specfics_block %}
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Roboto|Slabo+27px|Titan+One" rel="stylesheet">
-{% endblock font_block %}
+    <script src="{% static 'jscolor.js' %}"></script>
+{% endblock specfics_block %}
 {% block body_block %}
-    <div class="row">
-        <img src="{% static 'resources/GIFWriter.svg' %}" class="mx-auto logo" width=350 />
-    </div> 
+
     <div class="row">
         <p class="mx-auto header">***Customize***</p>
     </div>
     <hr class="my-4">
     <div class="container">
         <div class="row">
-                <div class="card mx-auto result" style="background: url('{{ gif }}') no-repeat center/cover;">
-                    <p class="center">{{ text }}</p>
-                </div><br>
-                <input type="submit" value="Create" class="sub custom-button" hidden>                
-    </div>
+            <div class="col-lg-12">
+                <button class="mx-auto custom-button form-control choose">Font</button>
+                <p class="text-center">COLOR<input id="selectedColor" class="jscolor {onFineChange:'update(this)'} form-control custom-input choose mx-auto" value="FFFFFF"></p>
+            </div>
+            <div class="col-lg-12">
+                <div class="card mx-auto result" style="background: url('{{ chosen }}') no-repeat center/cover;">
+                    <p class="center mx-auto text">{{ text }}</p>
+                </div>
+                <p><input id="create" type="submit" class="form-control custom-button mx-auto choose" value="Create GIF"></p> 
+            </div>
+        </div>
     <form method="POST" id='chooseform' class="mx-auto text-center"> 
                 <div class="form-group">
-                    <input class="form-control" id="chosengif" name="gif" type="text" hidden>
+                {% csrf_token %}
+                    <input class="form-control" id="font" name="font" type="text" value="Uni Sans CAPS Heavy Italic" hidden>
+                    <input class="form-control" id="color" name="color" type="text" value="255,255,255" hidden>
                 </div>
     </form>
-    
+    <script>
+        var fonts = ['Uni Sans CAPS Heavy Italic', 'Slabo 27px', 'Oleo Script', 'Roboto', 'Titan One']
+        var target = fonts.length - 1
+        var i = 0
+        $('button.custom-button').click(function(){
+            i++
+            //console.log(fonts[i])
+            $('button.custom-button, p.center.mx-auto').css('font-family', fonts[i]) //Apparentlt this doesn't work with multiple selectors
+            $('#font').attr('value', fonts[i])
+            if (i == target) {
+                i = -1
+            }
+        })
+        
+        function update(picker) {
+            $('p.text').css('color', 'rgb(' + Math.round(picker.rgb[0]) + ',' + Math.round(picker.rgb[1]) + ',' + Math.round(picker.rgb[2]) + ')')
+            $('#color').attr('value', Math.round(picker.rgb[0]) + ',' + Math.round(picker.rgb[1]) + ',' + Math.round(picker.rgb[2]))
+        }
+        $('#create').click(function() {
+            $('#chooseform').trigger('submit')
+        });
+    </script>
+
         
 {% endblock body_block %}

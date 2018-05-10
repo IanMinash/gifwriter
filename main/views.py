@@ -4,6 +4,8 @@ from giphy_client.rest import ApiException
 from django.conf import settings
 from random import randint
 from main.watermarker import watermarker
+from django.http import HttpResponse
+import os
 
 # Create your views here.
 giphy_api_key = settings.GIPHY_API  # str | Giphy API Key.
@@ -30,9 +32,23 @@ def result(request):
         print("Exception when calling DefaultApi->gifs_search_get: %s\n" % e)
     request.session['urls'], request.session['query'] = gifs, query
     return render(request, 'main/results.html', context={'gifs':gifs})
-    
+
+Fonts = {
+    'Oleo Script':os.path.join(settings.FONTS_DIR, 'Oleo.ttf'),
+    'Roboto':os.path.join(settings.FONTS_DIR, 'Roboto.ttf'),
+    'Slabo 27px':os.path.join(settings.FONTS_DIR, 'Slabo.ttf'),
+    'Titan One':os.path.join(settings.FONTS_DIR, 'TitanOne.ttf'),
+    'Uni Sans CAPS Heavy Italic':os.path.join(settings.FONTS_DIR, 'UniSans.otf'),
+}    
 def chosen(request):
     index = int(request.GET.get('gif'))
     chosen = request.session['urls'][index]
     text = request.session['query']
-    return render(request, "main/chosen.html", context={'chosen':chosen, 'text':text})
+    if request.method == 'POST':
+        global Fonts
+        gif = open(watermarker(chosen, text, Fonts[request.POST.get('font')], request.POST.get('color')), 'rb').read()
+        response = HttpResponse(gif, content_type='image/gif')
+        response['Content-Disposition'] = 'attachment; filename="the.gif"'
+        return response
+    else:
+        return render(request, "main/chosen.html", context={'chosen':chosen, 'text':text})

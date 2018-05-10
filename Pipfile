@@ -9,6 +9,8 @@ paralleldots = "*"
 giphy-client = "*"
 pillow = "*"
 django-heroku = "*"
+numpy = "*"
+imageio = "*"
 
 [dev-packages]
 "autopep8" = "*"
