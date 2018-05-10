@@ -46,9 +46,11 @@ def chosen(request):
     text = request.session['query']
     if request.method == 'POST':
         global Fonts
-        gif = open(watermarker(chosen, text, Fonts[request.POST.get('font')], request.POST.get('color')), 'rb').read()
+        gif_dir = watermarker(chosen, text, Fonts[request.POST.get('font')], request.POST.get('color'))
+        gif = open(gif_dir, 'rb').read()
         response = HttpResponse(gif, content_type='image/gif')
         response['Content-Disposition'] = 'attachment; filename="the.gif"'
+        os.remove(gif_dir)
         return response
     else:
         return render(request, "main/chosen.html", context={'chosen':chosen, 'text':text})
