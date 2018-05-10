@@ -8,6 +8,8 @@ django = "==2.0.2"
 paralleldots = "*"
 giphy-client = "*"
 pillow = "*"
+numpy = "*"
+imageio = "*"
 
 [dev-packages]
 "autopep8" = "*"

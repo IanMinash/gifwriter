@@ -8,10 +8,8 @@
     
 
 {% block body_block %}
-    <div class="row">
-        <img src="{% static 'resources/GIFWriter.svg' %}" class="mx-auto logo" width=350 />
-    </div>    
-    <div class="row center">
+
+    <div class="row center submitfield">
             <form method="GET" action="{% url 'result' %}" class="mx-auto text-center eighty"> 
                 <div class="form-group">
                     <input class="form-control custom-input" id="querybox" name="query" type="text" placeholder="Get GIFs">
