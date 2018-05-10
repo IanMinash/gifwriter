@@ -8,9 +8,9 @@ django = "==2.0.2"
 paralleldots = "*"
 giphy-client = "*"
 pillow = "*"
-django-heroku = "*"
-numpy = "*"
 imageio = "*"
+numpy = "*"
+django-heroku = "*"
 
 [dev-packages]
 "autopep8" = "*"
