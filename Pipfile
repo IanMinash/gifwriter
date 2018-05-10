@@ -9,6 +9,7 @@ paralleldots = "*"
 giphy-client = "*"
 pillow = "*"
 imageio = "*"
+numpy = "*"
 
 [dev-packages]
 "autopep8" = "*"
