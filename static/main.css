@@ -1,24 +1,23 @@
-@font-face{
-    font-family: 'Uni Sans CAPS Heavy Italic';
-    src: url("fonts/UniSans.otf");
-  }
+@font-face {
+  font-family: "Uni Sans CAPS Heavy Italic";
+  src: url("fonts/UniSans.otf");
+}
 
-
-body{
-    height:100vh;
-    margin:0;
-    font-family: 'Uni Sans CAPS Heavy Italic', sans-serif !important;
-    line-height:1.8em;
-    color:rgb(128, 128, 128) !important;
-    background-color:rgb(51, 51, 51) !important;
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Uni Sans CAPS Heavy Italic", sans-serif !important;
+  line-height: 1.8em;
+  color: rgb(128, 128, 128) !important;
+  background-color: rgb(51, 51, 51) !important;
   font-size: 20px;
-  }
+}
 
-.row{
+.row {
   margin: 0 !important;
 }
 
-.selected{
+.selected {
   border-radius: 10px !important;
   width: 18rem;
   height: 22rem;
@@ -27,7 +26,7 @@ body{
   border-bottom: 8px solid rgb(237, 30, 121) !important;
 }
 
-.result{
+.result {
   border-radius: 10px !important;
   width: 18rem;
   height: 22rem;
@@ -35,105 +34,102 @@ body{
   border: 2px solid rgb(128, 128, 128) !important;
 }
 
-
 .center {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center.submitfield {
+  font-size: 70px;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+.center.text {
+  font-size: 60px;
+}
+
+.userinput {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 2px solid #f4f4f4;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  color: #f4f4f4 !important;
+  width: 80%;
+  min-height: 20vh;
+  max-height: 60vh;
+}
+
+.eighty {
+  width: 80% !important;
+}
+
+.logo {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.custom-input {
+  background-color: rgb(51, 51, 51) !important;
+  color: rgb(128, 128, 128) !important;
+  border: 2px solid rgb(128, 128, 128) !important;
+  font-size: 20px !important;
+}
+.custom-input:focus {
+  border: 2px solid rgb(237, 30, 121) !important;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(237, 30, 121, 0.25) !important;
+}
+
+.custom-button {
+  background-color: rgb(128, 128, 128) !important;
+  color: rgb(51, 51, 51) !important;
+  margin-top: 10px;
+  border: 2px solid rgb(128, 128, 128) !important;
+  font-size: 20px !important;
+}
+.custom-button:hover {
+  background-color: rgb(237, 30, 121) !important;
+  border: 2px solid rgb(237, 30, 121) !important;
+}
+
+.form-control.choose {
+  width: 18rem;
+}
+
+div.col-sm-4 {
+  min-width: 18rem;
+}
+
+.sub.custom-button {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  position: relative;
+  top: 97.5%;
+  transform: translateY(-97.5%);
+  background-color: rgb(237, 30, 121) !important;
+  border: 2px solid rgb(237, 30, 121) !important;
+}
+
+.header {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 24px;
+}
+
+p.lead {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+@media (max-width: 576px) {
+  .center {
+    font-size: 40px;
   }
-
-  .center.submitfield {
-    font-size: 70px;
-    top: 40%;
-    transform: translateY(-40%);
-  }
-
-  .center.text {
-    font-size: 60px;
-  }
-
-  .userinput{
-     background-color: rgba(0,0,0,0);
-     border-bottom: 2px solid #f4f4f4;
-     border-left: 0;
-     border-right: 0;
-     border-top:0; 
-     color:#f4f4f4 !important;
-     width: 80%;
-     min-height: 20vh;
-     max-height: 60vh;
-  }
-
-
-  .eighty{
-    width: 80% !important;
-
-  }
-
-  .logo{
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-
-  .custom-input{
-    background-color: rgb(51, 51, 51) !important;
-    color: rgb(128, 128, 128) !important;
-    border: 2px solid rgb(128, 128, 128) !important;
-    font-size: 20px !important;
-  }
-  .custom-input:focus{
-    border: 2px solid rgb(237, 30, 121) !important;
-
-  }
-
-  .form-control:focus{
-    box-shadow:0 0 0 .2rem rgba(237, 30, 121,.25) !important
-  }
-
-  .custom-button{
-    background-color: rgb(128, 128, 128) !important;
-    color: rgb(51, 51, 51) !important;
-    margin-top: 10px;
-    border: 2px solid rgb(128, 128, 128) !important;
-    font-size: 20px !important;
-  }
-  .custom-button:hover{
-    background-color: rgb(237, 30, 121) !important;
-    border: 2px solid rgb(237, 30, 121) !important;
-
-  }
-
-  .form-control.choose {
-    width: 18rem;
-  }
-
-  div.col-sm-4{
-    min-width: 18rem;
-  }
-
-  .sub.custom-button{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    position: relative;
-    top: 97.5%;
-    transform: translateY(-97.5%);
-    background-color: rgb(237, 30, 121) !important;
-    border: 2px solid rgb(237, 30, 121) !important;
-  }
-
-  .header{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 24px;
-  }
-
-
-  @media(max-width:576px){
-    .center{
-      font-size: 40px;
-  
-    }
-  }
+}

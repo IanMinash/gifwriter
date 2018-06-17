@@ -10,7 +10,10 @@ giphy-client = "*"
 pillow = "*"
 imageio = "*"
 numpy = "*"
+<<<<<<< HEAD
 django-heroku = "*"
+=======
+>>>>>>> master
 
 [dev-packages]
 "autopep8" = "*"
