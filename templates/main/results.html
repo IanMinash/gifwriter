@@ -15,14 +15,18 @@
     <hr class="my-4">
     <div class="container">
         <div class="row">
-            {% for gif in gifs %}
-            <div class="col-sm-4">
-                <div class="card mx-auto result" style="background: url('{{ gif }}') no-repeat center/cover;">
-                    <input type="submit" value="Choose" class="sub custom-button" hidden>
-                </div>
-            </div>
-            
-            {% endfor %}
+            {% if gifs %}
+                {% for gif in gifs %}
+                <div class="col-sm-4">
+                    <div class="card mx-auto result" style="background: url('{{ gif }}') no-repeat center/cover;">
+                        <input type="submit" value="Choose" class="sub custom-button" hidden>
+                    </div>
+                </div>                
+                {% endfor %}          
+            {% else %}
+                <p class="lead text-center mx-auto">No GIFs found matching your query.</p>
+            {% endif %}
+
         </div>
     </div>
     <form method="GET" action="{% url 'chosen' %}" id="chooseform" class="mx-auto text-center"> 
